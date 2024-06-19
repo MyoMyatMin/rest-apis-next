@@ -35,12 +35,9 @@ export const GET = async (request: Request) => {
       status: 200,
     });
   } catch (error: any) {
-    return (
-      new NextResponse("Error in fetching categories" + error.message),
-      {
-        status: 500,
-      }
-    );
+    return new NextResponse("Error in fetching categories" + error.message, {
+      status: 500,
+    });
   }
 };
 export const POST = async (request: Request) => {
